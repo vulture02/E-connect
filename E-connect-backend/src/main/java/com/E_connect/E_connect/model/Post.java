@@ -10,8 +10,9 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collation = "posts")
+@Document(collection = "posts")
 public class Post {
+
     @Id
     private String id;
     private String title;
@@ -22,12 +23,11 @@ public class Post {
     private LocalDateTime createdAt;
 
     public Post(String title, String description, String category, String userEmail, String location) {
-        this.title=title;
+        this.title = title;
         this.description = description;
         this.category = category;
         this.userEmail = userEmail;
         this.location = location;
         this.createdAt = LocalDateTime.now();
     }
-
 }
